@@ -4,6 +4,8 @@ http://wiki.github.com/ffi/ffi/
 
 http://www.mega-nerd.com/libsndfile/
 
+incredibly pre-alpha right now.  might only work on my laptop actually.
+
 == INSTALL:
 
-  [sudo] gem install ffi-libsndfile
+clone this repo
