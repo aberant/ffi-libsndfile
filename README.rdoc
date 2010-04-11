@@ -1,0 +1,9 @@
+= FFI wrapper for libsndfile
+
+http://wiki.github.com/ffi/ffi/
+
+http://www.mega-nerd.com/libsndfile/
+
+== INSTALL:
+
+  [sudo] gem install ffi-libsndfile

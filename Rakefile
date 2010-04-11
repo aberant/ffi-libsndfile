@@ -1,6 +1,11 @@
 require 'rake/gempackagetask'
 require 'spec/rake/spectask'
 
+VERSION = File.read('VERSION')
+
+# =========
+# = specs =
+# =========
 task :default => :spec
 
 Spec::Rake::SpecTask.new do |t|
@@ -10,9 +15,12 @@ Spec::Rake::SpecTask.new do |t|
   t.spec_opts = ["--colour"]
 end
 
+# ================
+# = building gem =
+# ================
 spec = Gem::Specification.new do |s|
   s.name = "FFI-libsndfile"
-  s.version = "0.0.1"
+  s.version = VERSION
 
   s.author = "Colin Harris"
   s.email = "qzzzq1@gmail.com"
@@ -33,4 +41,15 @@ end
 
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.need_tar = true
+end
+
+# ========
+# = rdoc =
+# ========
+require 'rake/rdoctask'
+Rake::RDocTask.new do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title = "ffi-libsndfile #{VERSION}"
+  rdoc.rdoc_files.include('README*')
+  rdoc.rdoc_files.include('lib/**/*.rb')
 end
